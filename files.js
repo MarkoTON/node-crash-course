@@ -1,6 +1,8 @@
 const fs = require('fs');
 
-// reading files
+// console.log(fs);
+
+// reading files // Ucitava pa kada zavrsi sa ucitavanjem ona se opali ova druga funkcija
 fs.readFile('./docs/blog.txt', (err, data) => {
   if (err) {
     console.log(err);
@@ -8,10 +10,10 @@ fs.readFile('./docs/blog.txt', (err, data) => {
   console.log(data.toString());
 });
 
-// console.log('last line');
+console.log('last line');
 
-// writing files
-fs.writeFile('./docs/blog.txt', 'hello, world', () => {
+// writing files // ako nema file onda ce ga on kreirati // ako je bio neki text pre ovog, on ce ga pregaziti
+fs.writeFile('./docs/blog23.txt', 'hello, world', () => {
   console.log('file was written');
 });
 
@@ -36,7 +38,7 @@ if (!fs.existsSync('./assets')) {
   });
 }
 
-// deleting files
+// deleting files // existsSync je sinhrona metoda i blokirace code. Tako da dok se to ne zavrsi ne ide se dalje.
 if (fs.existsSync('./docs/deleteme.txt')) {
   fs.unlink('./docs/deleteme.txt', err => {
     if (err) {

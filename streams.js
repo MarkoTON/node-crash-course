@@ -12,5 +12,5 @@ readStream.on('data', chunk => {
   writeStream.write(chunk);
 });
 
-// piping
+// piping // kraca varijanta
 // readStream.pipe(writeStream);

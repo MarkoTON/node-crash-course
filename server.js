@@ -8,8 +8,8 @@ const server = http.createServer((req, res) => {
   // set header content type
   res.setHeader('Content-Type', 'text/html');
 
-  res.write('<p>hello, ninjas</p>');
-  res.write('<p>hello again, ninjas</p>');
+  // res.write('<p>hello, ninjas</p>');
+  // res.write('<p>hello again, ninjas</p>');
   // Ako skinem res.end() onda on samo na ovome dodaje sledeci file
   // res.end();
 

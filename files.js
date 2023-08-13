@@ -21,7 +21,7 @@ fs.writeFile('./docs/blog2.txt', 'hello, again', () => {
   console.log('file was written');
 });
 
-// directories
+// directories // existsSync je sinhrona metoda i blokirace code. Tako da dok se to ne zavrsi ne ide se dalje.
 if (!fs.existsSync('./assets')) {
   fs.mkdir('./assets', err => {
     if (err) {

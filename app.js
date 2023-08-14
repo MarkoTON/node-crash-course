@@ -16,6 +16,8 @@ app.get('/', (req, res) => {
     {title: 'Mario finds stars', snippet: 'Lorem ipsum dolor sit amet consectetur'},
     {title: 'How to defeat bowser', snippet: 'Lorem ipsum dolor sit amet consectetur'},
   ];
+  // Sada se renderuju, vise se ne salje kao pre. 
+  // Sada mozemo i parametre da saljemo.
   res.render('index', { title: 'Home', blogs });
 });
 
@@ -24,6 +26,7 @@ app.get('/about', (req, res) => {
 });
 
 app.get('/blogs/create', (req, res) => {
+  // renderuj mi novu stranicu... 
   res.render('create', { title: 'Create a new blog' });
 });
 

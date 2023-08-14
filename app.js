@@ -7,8 +7,12 @@ const app = express();
 app.listen(3000);
 
 app.get('/', (req, res) => {
+
   // kada se stavi 'send' onda on automatski sredi header za responde.
+    // set header content type
+    // res.setHeader('Content-Type', 'text/html');
   // res.send('<p>home page</p>');
+
   res.sendFile('./views/index.html', { root: __dirname });
 });
 

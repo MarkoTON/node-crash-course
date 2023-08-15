@@ -7,7 +7,7 @@ const Blog = require('./models/blog');
 const app = express();
 
 // connect to mongodb & listen for requests
-const dbURI = "mongodb+srv://tikva:mehanika2@nodetuts.oely81p.mongodb.net/?retryWrites=true&w=majority";
+const dbURI = "mongodb+srv://tikva:mehanika2@nodetuts.oely81p.mongodb.net/nodetuts?retryWrites=true&w=majority";
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(result => app.listen(3000))
@@ -52,7 +52,7 @@ app.get('/all-blogs', (req, res) => {
 });
 
 app.get('/single-blog', (req, res) => {
-  Blog.findById('5ea99b49b8531f40c0fde689')
+  Blog.findById('a2Ym28tpmnqFbp5X')
     .then(result => {
       res.send(result);
     })

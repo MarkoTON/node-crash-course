@@ -18,6 +18,7 @@ app.set('view engine', 'ejs');
 
 // middleware & static files
 app.use(express.static('public'));
+// middleware za post
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use((req, res, next) => {
@@ -49,7 +50,9 @@ app.get('/blogs', (req, res) => {
     });
 });
 
+// Tamo se salje post pa on to hvata odatle
 app.post('/blogs', (req, res) => {
+  // req.body ti je ono sto stize sa requesta iz URL-a
   // console.log(req.body);
   const blog = new Blog(req.body);
 

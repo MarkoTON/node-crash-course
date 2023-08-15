@@ -18,6 +18,8 @@ app.use((req, res, next) => {
   console.log('host: ', req.hostname);
   console.log('path: ', req.path);
   console.log('method: ', req.method);
+  // next() kaze da kada zavrsis sa operacijama unutar use() sada pruduzi dalje ili ti izadji iz funkcije.
+  // Ovo se izgleda ne koristi za rederect stranica
   next();
 });
 

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
+// Ovo mu dodje kao interface u TS-u
 const blogSchema = new Schema({
   title: {
     type: String,

@@ -25,6 +25,8 @@ app.use((req, res, next) => {
 });
 
 // mongoose & mongo tests
+// {"_id":"64dba44554d10a35a07c0661","title":"new blog","snippet":"about my new blog","body":"more about my new blog","createdAt":"2023-08-15T16:13:57.214Z","updatedAt":"2023-08-15T16:13:57.214Z","__v":0}
+// Ovo se dobije kada se ode na add-blog. To smo sada preko ove funkcije sredili
 app.get('/add-blog', (req, res) => {
   const blog = new Blog({
     title: 'new blog',
@@ -52,6 +54,7 @@ app.get('/all-blogs', (req, res) => {
 });
 
 app.get('/single-blog', (req, res) => {
+  // ovaj ID je ID objekata. 
   Blog.findById('a2Ym28tpmnqFbp5X')
     .then(result => {
       res.send(result);

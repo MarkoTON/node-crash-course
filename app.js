@@ -64,6 +64,7 @@ app.get('/single-blog', (req, res) => {
     });
 });
 
+// Otisao je na home page ali ga je rederektovano na /blogs
 app.get('/', (req, res) => {
   res.redirect('/blogs');
 });
@@ -77,7 +78,9 @@ app.get('/blogs/create', (req, res) => {
   res.render('create', { title: 'Create a new blog' });
 });
 
+// DB
 app.get('/blogs', (req, res) => {
+  // createdAt je sortiranje. Ovo mi nije jasno odakle se izvlaci. Ovo je izgleda Mongo DB
   Blog.find().sort({ createdAt: -1 })
     .then(result => {
       res.render('index', { blogs: result, title: 'All blogs' });

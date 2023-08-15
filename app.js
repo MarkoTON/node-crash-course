@@ -81,6 +81,7 @@ app.delete('/blogs/:id', (req, res) => {
   
   Blog.findByIdAndDelete(id)
     .then(result => {
+      // mora nesto da se salje
       res.json({ redirect: '/blogs' });
     })
     .catch(err => {

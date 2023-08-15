@@ -10,7 +10,17 @@ app.listen(3000);
 // register view engine
 app.set('view engine', 'ejs');
 
-// middleware & static files
+// middleware & static files -> Sve sto je unutar tog forldera bice dostupno kao staticki file front end-u
+// Takodje mora link da se doda unutar header-a
+{/* <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  // Link koji je dodat i on sada vazi jer je preko express.static('public') dodat...
+  <link rel="stylesheet" href="/styles.css">
+  
+  <title>Blog Ninja | <%= title %></title>
+</head> */}
 app.use(express.static('public'));
 
 app.use((req, res, next) => {
@@ -28,6 +38,7 @@ app.use((req, res, next) => {
   next();
 });
 
+// GET / 304 32.208 ms - -
 app.use(morgan('dev'));
 
 app.use((req, res, next) => {
